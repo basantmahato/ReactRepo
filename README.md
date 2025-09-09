@@ -1,2 +1,2 @@
 # MernRepo
-M E R N 
+My React repository
