@@ -1,6 +1,0 @@
-# Node.js
-# The node_modules directory contains all the project dependencies.
-# It can be re-created by running `npm install` or `yarn install`.
-node_modules/
-npm-debug.log*
-yarn-error.log
