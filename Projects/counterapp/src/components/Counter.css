@@ -1,0 +1,150 @@
+/*
+ * Counter App Styles
+ * This CSS corresponds to the UI/UX design components:
+ * 1. Container/Layout
+ * 2. Display Area
+ * 3. Controls (Buttons)
+ */
+
+:root {
+  --color-primary: #007bff; /* Blue */
+  --color-secondary: #6c757d; /* Gray */
+  --color-danger: #dc3545; /* Red */
+  --color-background: #f8f9fa; /* Very light gray */
+  --color-text: #343a40; /* Dark gray */
+  --font-display: 'Roboto Mono', monospace;
+  --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-body);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* 1. Counter App Container */
+.counter-app-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+/* 2. Display Area */
+.counter-display {
+  margin: 30px 0;
+  padding: 15px 0;
+  border: 1px solid #e9ecef; /* Light border to frame the number */
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.count-value {
+  font-family: var(--font-display);
+  font-size: 5rem; /* Large and prominent */
+  font-weight: 700;
+  color: var(--color-primary); /* Default active color */
+  transition: color 0.3s ease-in-out;
+  display: block; /* Ensures centering */
+}
+
+/* State for Negative Number */
+.count-value.negative {
+  color: var(--color-danger); /* Red when negative */
+}
+
+/* 3. Controls Area */
+.control-group-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.control-group-auxiliary {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0; /* Separator for auxiliary actions */
+}
+
+/* General Button Styles */
+.btn {
+  padding: 15px 25px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none; /* Prevent text selection */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-grow: 1; /* Make main buttons fill space */
+  min-height: 55px;
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Primary Increment Button */
+.btn-increment {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-increment:hover {
+  background-color: #0056b3; /* Darker blue */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-increment:active {
+  transform: translateY(1px); /* Pressed effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary Decrement Button (Outline Style) */
+.btn-decrement {
+  background-color: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-decrement:hover {
+  background-color: #e6f0ff; /* Light blue background on hover */
+}
+
+.btn-decrement:active {
+  transform: translateY(1px);
+}
+
+/* Reset Button (Auxiliary/Neutral Style) */
+.btn-reset {
+  background-color: var(--color-secondary);
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  flex-grow: 0; /* Don't stretch this button */
+  min-width: 120px;
+}
+
+.btn-reset:hover {
+  background-color: #5a6268; /* Darker gray */
+}
+
+.btn-reset:active {
+  transform: translateY(1px);
+}
