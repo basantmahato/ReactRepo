@@ -1,0 +1,53 @@
+/* Container background switches between light and dark */
+.toggle-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.toggle-container.light {
+  background: #f9fafb;
+  color: #111;
+}
+
+.toggle-container.dark {
+  background: #111827;
+  color: #f9fafb;
+}
+
+/* Card */
+.toggle-card {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dark .toggle-card {
+  background: #1f2937;
+}
+
+/* Button */
+.toggle-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.toggle-btn:hover {
+  background: #1e40af;
+}
+
+.toggle-btn:active {
+  transform: scale(0.97);
+}
