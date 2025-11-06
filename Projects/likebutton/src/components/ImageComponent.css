@@ -1,0 +1,99 @@
+/* Basic Reset and Box-sizing for better layout control */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Setup for centering the component on the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fafafa; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* -----------------------------------
+ * 1. INSTAGRAM POST CARD STYLES 
+ * ----------------------------------- */
+
+.instagram-post-card {
+  /* Responsive Width */
+  max-width: 600px; 
+  width: 100%; 
+  background-color: #fff;
+  border: 1px solid #dbdbdb; 
+  margin: 20px 0;
+}
+
+/* -----------------------------------
+ * 2. IMAGE CONTAINER (The Key to the Square)
+ * ----------------------------------- */
+
+.post-image-container {
+  /* 1:1 Aspect Ratio Trick */
+  width: 100%;
+  padding-top: 100%; 
+  position: relative;
+  overflow: hidden;
+}
+
+.post-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the square area */
+  display: block;
+}
+
+/* -----------------------------------
+ * 3. ACTIONS AND COUNT
+ * ----------------------------------- */
+
+.post-actions {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-start;
+  padding: 8px 0; 
+  font-size: 24px; 
+  color: #262626; /* Default color for the hollow heart */
+  transition: transform 0.2s ease-in-out;
+}
+
+.like-button:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.like-count {
+  font-size: 14px;
+  font-weight: 600; /* Instagram-style semi-bold */
+  color: #262626;
+  margin-top: 4px; 
+  padding-bottom: 8px; 
+}
+
+/* -----------------------------------
+ * 4. RESPONSIVENESS (Mobile Optimization)
+ * ----------------------------------- */
+
+@media (max-width: 600px) {
+  .instagram-post-card {
+    /* Full width on mobile, edges touch the screen */
+    border-left: none;
+    border-right: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
